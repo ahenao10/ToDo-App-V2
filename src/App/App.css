@@ -1,0 +1,25 @@
+.App {
+  background-color: #161A30;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #31304D;
+  color: white;
+  width: auto;
+  padding: 20px;
+  border: 1px solid #161A30;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0)
+}
+
+.todos-container h2 {
+  margin: 0;
+  padding-bottom: 20px;
+}

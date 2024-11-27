@@ -1,0 +1,21 @@
+.search-container {
+    height: 32px;
+}
+
+.search-container input {
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: 0 8px;
+}
+
+.search-container button {
+    height: 100%;
+    width: 52px;
+    margin-left: 12px;
+    border-radius: 4px;
+    background-color: black;
+    border: none;
+    color: white;
+    text-align: center;
+}

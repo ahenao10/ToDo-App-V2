@@ -1,0 +1,29 @@
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    background-color: #B6BBC4;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: 12px 0 0 0;
+    height: 36px;
+}
+
+.todo-item div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.todo-item input{
+    margin-right: 8px;
+}
+
+.todo-item p {
+    margin: 0;
+}
+
+.todo-item span {
+    margin-left: 8px;
+}
