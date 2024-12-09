@@ -2,13 +2,13 @@ import "./TodoItem.css";
 
 function TodoItem() {
     return (
-        <div className="todo-item">
+        <li className="todo-item">
             <div>
                 <input type="checkbox" />
                 <p>Item 1</p>
             </div>
             <span>X</span>
-        </div>
+        </li>
     )
 }
 
