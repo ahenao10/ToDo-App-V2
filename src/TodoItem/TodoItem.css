@@ -8,6 +8,7 @@
     border-radius: 4px;
     margin: 12px 0 0 0;
     height: 36px;
+    list-style-type: none;
 }
 
 .todo-item div {
@@ -26,4 +27,8 @@
 
 .todo-item span {
     margin-left: 8px;
+}
+
+.completed-todo {
+    background-color: rgb(69, 116, 0);
 }
