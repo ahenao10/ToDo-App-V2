@@ -1,18 +1,23 @@
 import "./TodoItem.css";
+import { BsXSquareFill, BsCheckSquareFill } from "react-icons/bs"
 
-function TodoItem({ text, completed, setTodos }) {
+function TodoItem({ text, completed, setTodos, deleteTodo }) {
     return (
-        <li className={`todo-item ${completed && 'completed-todo'}`}>
+        <li className={`todo-item ${completed ? 'completed-todo' : ''}`}>
             <div>
-                <input type="checkbox"
-                    onChange={(e) => { 
-                        setTodos({ text, completed: e.target.checked})
-                        console.log(e.target.checked);
-                         
-                        }} />
+                <BsCheckSquareFill
+                    onClick={(e) => {
+                        setTodos({ text, completed: !completed })
+                        console.log(completed);
+                    }}
+                    className={`icon-check ${completed ? 'icon-check-completed' : ''}`} />
                 <p>{text}</p>
             </div>
-            <span>X</span>
+            <BsXSquareFill
+                className="icon-delete"
+                onClick={() => {
+                    deleteTodo({ text, completed })
+                }} />
         </li>
     );
 };

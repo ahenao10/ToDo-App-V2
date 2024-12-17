@@ -45,11 +45,19 @@ function TodoProvider({ children }) {
         setTodos(newTodos)
     }
 
+    const deleteTodos = (todoToRemove) => {
+        const index = todos.findIndex(todo => todo.text === todoToRemove.text)
+        const newTodos = [...todos]
+        newTodos.splice(index, 1)
+        setTodos(newTodos)
+    }
+
     return (
         <TodoContext.Provider value={{
             setSearchValue,
             searchedTodos,
-            updateTodos
+            updateTodos, 
+            deleteTodos
         }}>
             {children}
         </TodoContext.Provider>

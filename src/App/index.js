@@ -3,11 +3,11 @@ import { ToDoAddSearch } from '../ToDoAddSearch/index.js';
 import { TodoContext } from '../TodoContext/index.js';
 import { TodoItem } from '../TodoItem';
 import './App.css';
-import { TodoList } from './TodoList/index.js';
+import { TodoList } from '../TodoList';
 
 function App() {
 
-  const { searchedTodos: todos, updateTodos } = React.useContext(TodoContext);
+  const { searchedTodos: todos, updateTodos, deleteTodos } = React.useContext(TodoContext);
 
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
               text={todo.text}
               completed={todo.completed}
               setTodos={(updateTodo) => updateTodos(updateTodo)}
+              deleteTodo={(deleteTodo) => deleteTodos(deleteTodo)}
             />
           ))}
         </TodoList>

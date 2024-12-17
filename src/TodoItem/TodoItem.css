@@ -9,6 +9,7 @@
     margin: 12px 0 0 0;
     height: 36px;
     list-style-type: none;
+    
 }
 
 .todo-item div {
@@ -23,12 +24,35 @@
 
 .todo-item p {
     margin: 0;
-}
-
-.todo-item span {
-    margin-left: 8px;
+    padding: 0 8px 0 4px;
 }
 
 .completed-todo {
-    background-color: rgb(69, 116, 0);
+    background-color: #118B50;
+    text-decoration: line-through;
+}
+
+.icon-delete {
+    align-self: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-delete:hover {
+    color: rgb(255, 142, 142);
+    background-color: white;
+}
+
+.icon-check {
+    align-self: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-check:hover {
+    background-color: green;
+}
+
+.icon-check-completed {
+    color: #5DB996;
 }
