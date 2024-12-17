@@ -4,15 +4,21 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { setSearchValue } = React.useContext(TodoContext)
+    const { searchedTodos: todos, setSearchValue, addTodos } = React.useContext(TodoContext)
+
+    let [tempText, setTempText] = React.useState('')
 
     return (
         <div className="search-container">
             <input type="text" className="search-input" placeholder="Write the task"
                 onChange={(e) => {
                     setSearchValue(e.target.value)
+                    if (e.target.value && todos.length === 0) {
+                        setTempText(e.target.value)
+                    }
                 }} />
-            <button>+ Add</button>
+            <button
+                onClick={() => addTodos(tempText)}>+ Add</button>
         </div>
     )
 }

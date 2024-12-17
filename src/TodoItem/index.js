@@ -16,7 +16,11 @@ function TodoItem({ text, completed, setTodos, deleteTodo }) {
             <BsXSquareFill
                 className="icon-delete"
                 onClick={() => {
-                    deleteTodo({ text, completed })
+                    if (!completed) {
+                        alert('Debes complear la tarea primero')
+                    } else {
+                        deleteTodo({ text, completed })
+                    }
                 }} />
         </li>
     );

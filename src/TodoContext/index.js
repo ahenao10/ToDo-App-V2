@@ -52,12 +52,19 @@ function TodoProvider({ children }) {
         setTodos(newTodos)
     }
 
+    const addTodos = (text) => {
+        const newTodos = [...todos]
+        newTodos.push({ text: text, completed: false })
+        setTodos(newTodos)
+    }
+
     return (
         <TodoContext.Provider value={{
             setSearchValue,
             searchedTodos,
-            updateTodos, 
-            deleteTodos
+            updateTodos,
+            deleteTodos,
+            addTodos
         }}>
             {children}
         </TodoContext.Provider>

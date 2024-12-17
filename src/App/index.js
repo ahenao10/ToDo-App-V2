@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <div className="todos-container">
         <h2>ToDo List</h2>
-        <ToDoAddSearch></ToDoAddSearch>
+        <ToDoAddSearch />
         <TodoList>
           {todos.map((todo, index) => (
             <TodoItem
