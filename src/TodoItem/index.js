@@ -6,9 +6,8 @@ function TodoItem({ text, completed, setTodos, deleteTodo }) {
         <li className={`todo-item ${completed ? 'completed-todo' : ''}`}>
             <div>
                 <BsCheckSquareFill
-                    onClick={(e) => {
-                        setTodos({ text, completed: !completed })
-                        console.log(completed);
+                    onClick={() => {
+                        setTodos({ text: text, completed: !completed })
                     }}
                     className={`icon-check ${completed ? 'icon-check-completed' : ''}`} />
                 <p>{text}</p>
@@ -17,7 +16,7 @@ function TodoItem({ text, completed, setTodos, deleteTodo }) {
                 className="icon-delete"
                 onClick={() => {
                     if (!completed) {
-                        alert('Debes complear la tarea primero')
+                        alert('Debes completar la tarea primero')
                     } else {
                         deleteTodo({ text, completed })
                     }

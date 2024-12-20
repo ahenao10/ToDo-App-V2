@@ -15,10 +15,18 @@ function ToDoAddSearch() {
                     setSearchValue(e.target.value)
                     if (e.target.value && todos.length === 0) {
                         setTempText(e.target.value)
+                    } else if (todos.length >= 0){
+                        setTempText('')
                     }
                 }} />
             <button
-                onClick={() => addTodos(tempText)}>+ Add</button>
+                onClick={() => {
+                    if (!tempText) {
+                        alert('Aùn se encuentran conincidencias en la busqueda. Escribe el ToDo completo para poder ser añadido')
+                        return
+                    }
+                    addTodos(tempText)
+                }}>+ Add</button>
         </div>
     )
 }

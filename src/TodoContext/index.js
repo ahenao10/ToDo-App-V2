@@ -1,61 +1,49 @@
 import React from "react"
+import { useLocalStorage } from "./useLocalStorage";
 
 const TodoContext = React.createContext();
 
 function TodoProvider({ children }) {
 
-    const todoItemsTemp = [
-        {
-            text: "Completar TodoSearch",
-            completed: false
-        },
-        {
-            text: "Terminar la aplicacion de react",
-            completed: false
-        },
-        {
-            text: "Estilizar componentes",
-            completed: false
-        },
-        {
-            text: "Instalar Kali Linux",
-            completed: false
-        },
-        {
-            text: "Dios mio, pero tengo que seguir",
-            completed: false
-        },
-    ];
-
-    const [todos, setTodos] = React.useState(todoItemsTemp)
+    const {
+        items: todosList,
+        saveItem
+    } = useLocalStorage('TodosV1', [])
 
     const [searchValue, setSearchValue] = React.useState('')
 
-    const searchedTodos = todos.filter(
+    const searchedTodos = todosList.filter(
         todo => {
-            const todoText = todo.text.toLowerCase();
-            const searchText = searchValue.toLowerCase();
+
+            const noTildes = (text) => {
+                return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            };
+
+            const todoText = noTildes(todo.text.toLowerCase());
+            const searchText = noTildes(searchValue.toLowerCase());
             return todoText.includes(searchText)
         })
 
     const updateTodos = (updateTodo) => {
-        const index = todos.findIndex(todo => todo.text === updateTodo.text)
-        const newTodos = [...todos]
+        const index = todosList.findIndex(todo => todo.text === updateTodo.text)
+        console.log(index);
+
+        const newTodos = [...todosList]
         newTodos[index] = updateTodo
-        setTodos(newTodos)
+        saveItem(newTodos)
     }
 
     const deleteTodos = (todoToRemove) => {
-        const index = todos.findIndex(todo => todo.text === todoToRemove.text)
-        const newTodos = [...todos]
+        const index = todosList.findIndex(todo => todo.text === todoToRemove.text)
+        const newTodos = [...todosList]
         newTodos.splice(index, 1)
-        setTodos(newTodos)
+        saveItem(newTodos)
     }
 
     const addTodos = (text) => {
-        const newTodos = [...todos]
+        const newTodos = [...todosList]
         newTodos.push({ text: text, completed: false })
-        setTodos(newTodos)
+        saveItem(newTodos)
     }
 
     return (
