@@ -1,7 +1,7 @@
 import "./TodoItem.css";
 import { BsXSquareFill, BsCheckSquareFill } from "react-icons/bs"
 
-function TodoItem({ text, completed, setTodos, deleteTodo }) {
+function TodoItem({ text, completed, setOpenModal, setOpenModalDelete ,setTodos, deleteTodo }) {
     return (
         <li className={`todo-item ${completed ? 'completed-todo' : ''}`}>
             <div>
@@ -16,7 +16,7 @@ function TodoItem({ text, completed, setTodos, deleteTodo }) {
                 className="icon-delete"
                 onClick={() => {
                     if (!completed) {
-                        alert('Debes completar la tarea primero')
+                        setOpenModalDelete(true)
                     } else {
                         deleteTodo({ text, completed })
                     }

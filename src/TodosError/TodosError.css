@@ -1,0 +1,16 @@
+.todos-error{
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #B6BBC4;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.todos-error h2{
+    font-weight: bolder;
+}

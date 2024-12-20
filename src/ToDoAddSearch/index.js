@@ -4,7 +4,7 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { searchedTodos: todos, setSearchValue, addTodos } = React.useContext(TodoContext)
+    const { setOpenModalAdd, searchedTodos: todos, setSearchValue, addTodos } = React.useContext(TodoContext)
 
     let [tempText, setTempText] = React.useState('')
 
@@ -22,7 +22,7 @@ function ToDoAddSearch() {
             <button
                 onClick={() => {
                     if (!tempText) {
-                        alert('Aùn se encuentran conincidencias en la busqueda. Escribe el ToDo completo para poder ser añadido')
+                        setOpenModalAdd(true)
                         return
                     }
                     addTodos(tempText)
