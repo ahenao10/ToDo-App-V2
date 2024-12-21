@@ -9,6 +9,8 @@ import { TodosError } from '../TodosError/index.js';
 import { Modals } from '../Modals/index.js';
 import { TodosItemModal } from '../Modals/TodosItemModal/index.js';
 import { TodoAddSearchModal } from '../Modals/TodoAddSearchModal/index.js';
+import { AddEmptyTodoModal } from '../Modals/AddEmptyTodoModal/index.js';
+import { EmptyList } from '../EmptyList/index.js';
 
 
 function App() {
@@ -20,12 +22,14 @@ function App() {
     openModalAdd,
     setOpenModalAdd,
     setOpenModalDelete,
+    openAddEmptyModal,
+    setOpenAddEmptyModal,
     searchedTodos: todos,
     updateTodos,
-    deleteTodos
+    deleteTodos,
+    todosList,
+    localStorageItem
   } = React.useContext(TodoContext);
-
-  console.log(todos);
 
   return (
     <div className="App">
@@ -35,6 +39,7 @@ function App() {
         <TodoList>
           {loading && <TodosLoading />}
           {error && <TodosError error={error} />}
+          {((!loading && todosList.length === 0) || !localStorageItem) && <EmptyList />}
           {!loading && todos.map((todo, index) => (
             <TodoItem
               key={index}
@@ -51,6 +56,9 @@ function App() {
         </Modals>}
         {openModalAdd && <Modals>
           <TodoAddSearchModal setOpenModalAdd={setOpenModalAdd} />
+        </Modals>}
+        {openAddEmptyModal && <Modals>
+          <AddEmptyTodoModal setOpenAddEmptyModal={setOpenAddEmptyModal} />
         </Modals>}
       </div>
     </div>

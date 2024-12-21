@@ -9,11 +9,13 @@ function TodoProvider({ children }) {
         loading,
         error,
         items: todosList,
-        saveItem
+        saveItem,
+        localStorageItem
     } = useLocalStorage('TodosV1', [])
 
     const [openModalDelete, setOpenModalDelete] = React.useState(false)
     const [openModalAdd, setOpenModalAdd] = React.useState(false)
+    const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
 
     const [searchValue, setSearchValue] = React.useState('')
 
@@ -31,8 +33,6 @@ function TodoProvider({ children }) {
 
     const updateTodos = (updateTodo) => {
         const index = todosList.findIndex(todo => todo.text === updateTodo.text)
-        console.log(index);
-
         const newTodos = [...todosList]
         newTodos[index] = updateTodo
         saveItem(newTodos)
@@ -59,11 +59,16 @@ function TodoProvider({ children }) {
             setOpenModalDelete,
             openModalAdd,
             setOpenModalAdd,
+            openAddEmptyModal,
+            setOpenAddEmptyModal,
+            searchValue,
             setSearchValue,
             searchedTodos,
             updateTodos,
             deleteTodos,
-            addTodos
+            addTodos, 
+            todosList,
+            localStorageItem
         }}>
             {children}
         </TodoContext.Provider>

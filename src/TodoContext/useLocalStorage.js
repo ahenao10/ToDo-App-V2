@@ -2,33 +2,33 @@ import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
 
+    const localStorageItem = localStorage.getItem(itemName);
+    
     const [items, setItems] = React.useState(() => {
-        const localStorageItem = localStorage.getItem(itemName)
         return localStorageItem ? JSON.parse(localStorageItem) : initialValue
     })
 
-    const [loading, setLoading] = React.useState(true)
-    const [error, setError] = React.useState(false)
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState(false);
 
     React.useEffect(() => {
         setTimeout(() => {
             try {
                 if (!localStorage.getItem(itemName)) {
-                    localStorage.setItem(itemName, JSON.stringify(initialValue))
+                    localStorage.setItem(itemName, JSON.stringify(initialValue));
                 }
-                setLoading(false)
-                console.log('TodoList cargada');
+                setLoading(false);
                 
             } catch (error) {
-                setLoading(false)
-                setError(error)
+                setLoading(false);
+                setError(error);
             }
         }, 2000)
 
     }, [itemName, initialValue])
 
     const saveItem = (newItem) => {
-        localStorage.setItem(itemName, JSON.stringify(newItem))
+        localStorage.setItem(itemName, JSON.stringify(newItem));
         setItems(newItem)
     }
 
@@ -36,7 +36,8 @@ function useLocalStorage(itemName, initialValue) {
         loading,
         error,
         items,
-        saveItem
+        saveItem, 
+        localStorageItem
     })
 }
 

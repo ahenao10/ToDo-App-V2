@@ -29,9 +29,10 @@
     color: orange;
 }
 
-.modal-todos  h1 {
+.modal-todos  p {
     margin: 0;
     color: white;
+    font-weight: 500;
 }
 
 .button-modal {

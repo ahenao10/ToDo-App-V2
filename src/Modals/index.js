@@ -6,7 +6,6 @@ function Modals({ children }) {
 
     return ReactDOM.createPortal(
         <div className="modals">
-
             {children},
         </div>,
         document.getElementById('modals')
