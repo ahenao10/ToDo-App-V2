@@ -10,7 +10,7 @@ function ToDoAddSearch() {
 
     return (
         <div className="search-container">
-            <input type="text" className="search-input" placeholder="Write the task"
+            <input type="text" className="search-input" id="search-input" placeholder="Write the task"
                 onChange={(e) => {
                     setSearchValue(e.target.value)
                     if (searchValue && todos.length === 0) {
@@ -33,6 +33,13 @@ function ToDoAddSearch() {
                     }
                     addTodos(tempText)
                     setTempText('')
+
+                    const input = document.getElementById('search-input')
+
+                    if (input) {
+                        input.value = ''
+                        setSearchValue('')
+                    }
                 }}>+ Add</button>
         </div>
     )
