@@ -1,5 +1,6 @@
 .search-container {
     display: flex;
+    position: relative;
     justify-content: space-between;
     height: 32px;
 }
@@ -9,7 +10,7 @@
     border-radius: 4px;
     width: 80%;
     border: none;
-    padding: 0 8px;
+    padding: 0 40px 0 8px;
 }
 
 .search-container button {
@@ -26,4 +27,14 @@
 
 .search-container button:hover {
     background-color: rgb(37, 37, 37);
+}
+
+#letters-counter {
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
 }

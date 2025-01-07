@@ -16,6 +16,7 @@ function TodoProvider({ children }) {
     const [openModalDelete, setOpenModalDelete] = React.useState(false)
     const [openModalAdd, setOpenModalAdd] = React.useState(false)
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
+    const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
 
     const [searchValue, setSearchValue] = React.useState('')
 
@@ -61,6 +62,8 @@ function TodoProvider({ children }) {
             setOpenModalAdd,
             openAddEmptyModal,
             setOpenAddEmptyModal,
+            openOneCharModal,
+            setOpenOneCharModal,
             searchValue,
             setSearchValue,
             searchedTodos,

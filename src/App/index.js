@@ -10,6 +10,7 @@ import { Modals } from '../Modals/index.js';
 import { TodosItemModal } from '../Modals/TodosItemModal/index.js';
 import { TodoAddSearchModal } from '../Modals/TodoAddSearchModal/index.js';
 import { AddEmptyTodoModal } from '../Modals/AddEmptyTodoModal/index.js';
+import { OneCharModal } from '../Modals/OneCharModal/index.js';
 import { EmptyList } from '../EmptyList/index.js';
 
 
@@ -24,6 +25,8 @@ function App() {
     setOpenModalDelete,
     openAddEmptyModal,
     setOpenAddEmptyModal,
+    openOneCharModal,
+    setOpenOneCharModal,
     searchedTodos: todos,
     updateTodos,
     deleteTodos,
@@ -59,6 +62,9 @@ function App() {
         </Modals>}
         {openAddEmptyModal && <Modals>
           <AddEmptyTodoModal setOpenAddEmptyModal={setOpenAddEmptyModal} />
+        </Modals>}
+        {openOneCharModal && <Modals>
+          <OneCharModal setOpenOneCharModal={setOpenOneCharModal} />
         </Modals>}
       </div>
     </div>
