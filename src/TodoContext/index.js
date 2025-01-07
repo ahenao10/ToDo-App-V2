@@ -13,7 +13,6 @@ function TodoProvider({ children }) {
         localStorageItem
     } = useLocalStorage('TodosV1', [])
 
-    const [openModalDelete, setOpenModalDelete] = React.useState(false)
     const [openModalAdd, setOpenModalAdd] = React.useState(false)
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
     const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
@@ -55,9 +54,7 @@ function TodoProvider({ children }) {
     return (
         <TodoContext.Provider value={{
             loading,
-            error,
-            openModalDelete,
-            setOpenModalDelete,
+            error, 
             openModalAdd,
             setOpenModalAdd,
             openAddEmptyModal,
