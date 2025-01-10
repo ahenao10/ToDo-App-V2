@@ -4,7 +4,7 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, searchValue, setSearchValue, addTodos } = React.useContext(TodoContext)
+    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal ,searchValue, setSearchValue, addTodos } = React.useContext(TodoContext)
 
     const [tempText, setTempText] = React.useState('') // Temporal text to add a new todo, transmit the value to the button and the button to the addTodos function
 
@@ -79,7 +79,8 @@ function ToDoAddSearch() {
             <span id="letters-counter">{`${0}/${30}`}</span>
             <button
                 onClick={() => {
-                    validateOneCaracter()
+                    // validateOneCaracter()
+                    setOpenAddDescriptionModal(true) // Open the modal to add a description
                 }}>+ Add</button>
         </div>
     )

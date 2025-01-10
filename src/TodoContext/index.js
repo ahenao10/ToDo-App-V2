@@ -16,6 +16,7 @@ function TodoProvider({ children }) {
     const [openModalAdd, setOpenModalAdd] = React.useState(false)
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
     const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
+    const [openAddDescriptionModal, setOpenAddDescriptionModal] = React.useState(false)
 
     const [searchValue, setSearchValue] = React.useState('')
 
@@ -47,7 +48,7 @@ function TodoProvider({ children }) {
 
     const addTodos = (text) => {
         const newTodos = [...todosList]
-        newTodos.push({ text: text, completed: false })
+        newTodos.push({ text: text, completed: false, description: '' }) // Add a new todo with the text and the completed status. Will modificated to add a description and a date
         saveItem(newTodos)
     }
 
@@ -61,6 +62,8 @@ function TodoProvider({ children }) {
             setOpenAddEmptyModal,
             openOneCharModal,
             setOpenOneCharModal,
+            openAddDescriptionModal, 
+            setOpenAddDescriptionModal,
             searchValue,
             setSearchValue,
             searchedTodos,
