@@ -22,7 +22,7 @@ function ToDoAddSearch() {
     function captureValueOnChange(e) {
         setSearchValue(e.target.value)
         if (searchValue && todos.length === 0) {
-            setTempText(e.target.value)
+            setTempText(e.target.value) // If the searchValue is not empty and the todos list is empty, the tempText will be the searchValue
             return
         }
         if (todos.length > 0) {
@@ -87,3 +87,7 @@ function ToDoAddSearch() {
 }
 
 export { ToDoAddSearch }
+
+
+
+// "[{"text":"Alejo","completed":false},{"text":"Idiotitas","completed":false},{"text":"Idiotas mas grandes","completed":false},{"text":"Par de idiotas","completed":false},{"text":"Jajajaja","completed":false},{"text":"Epajeeee","completed":false},{"text":"Joda socio tu sabes ","completed":false,"description":"Vea pues llavesita"},{"completed":false,"description":"Kagala"}]"

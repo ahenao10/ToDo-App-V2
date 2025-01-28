@@ -27,6 +27,8 @@ function App() {
     setOpenOneCharModal,
     openAddDescriptionModal,
     setOpenAddDescriptionModal,
+    titleValue,
+    descriptionValue,
     searchedTodos: todos,
     updateTodos,
     deleteTodos,
@@ -47,6 +49,7 @@ function App() {
             <TodoItem
               key={index}
               text={todo.text}
+              description={todo.description}
               completed={todo.completed}
               setTodos={(updateTodo) => updateTodos(updateTodo)}
               deleteTodo={(deleteTodo) => deleteTodos(deleteTodo)}
@@ -63,7 +66,7 @@ function App() {
           <OneCharModal setOpenOneCharModal={setOpenOneCharModal} />
         </Modals>}
         {openAddDescriptionModal && <Modals>
-          <AddTodoDescription setOpenAddDescriptionModal={setOpenAddDescriptionModal} />
+          <AddTodoDescription setOpenAddDescriptionModal={setOpenAddDescriptionModal} titleTodoValue={titleValue} descriptionTodoValue={descriptionValue}/>
         </Modals>}
       </div>
     </div>

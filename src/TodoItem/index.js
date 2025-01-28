@@ -1,7 +1,12 @@
+import React from "react";
 import "./TodoItem.css";
 import { BsXSquareFill, BsCheckSquareFill } from "react-icons/bs"
+import { TodoContext } from "../TodoContext";
 
-function TodoItem({ text, completed, setTodos, deleteTodo }) {
+function TodoItem({ text, description, completed, setTodos, deleteTodo }) {
+
+    const { setOpenAddDescriptionModal, setTitleValue, setDescriptionValue } = React.useContext(TodoContext)
+
     return (
         <li className={`todo-item ${completed ? 'completed-todo' : ''}`}>
             <div>
@@ -10,7 +15,11 @@ function TodoItem({ text, completed, setTodos, deleteTodo }) {
                         setTodos({ text: text, completed: !completed })
                     }}
                     className={`icon-check ${completed ? 'icon-check-completed' : ''}`} />
-                <p>{text}</p>
+                <p onClick={() => {
+                    setTitleValue(text)
+                    setDescriptionValue(description)
+                    setOpenAddDescriptionModal(true)
+                }}>{text}</p>
             </div>
             <BsXSquareFill
                 className="icon-delete"

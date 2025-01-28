@@ -17,7 +17,9 @@ function TodoProvider({ children }) {
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
     const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
     const [openAddDescriptionModal, setOpenAddDescriptionModal] = React.useState(false)
-
+    
+    const [titleValue, setTitleValue] = React.useState('') // usado para asignar el titulo de la tarea cuando el modal de agregar tarea esta abierto
+    const [descriptionValue, setDescriptionValue] = React.useState('') // usado para asignar la descripcion de la tarea cuando el modal de agregar tarea esta abierto
     const [searchValue, setSearchValue] = React.useState('')
 
     const searchedTodos = todosList.filter(
@@ -33,7 +35,7 @@ function TodoProvider({ children }) {
         })
 
     const updateTodos = (updateTodo) => {
-        const index = todosList.findIndex(todo => todo.text === updateTodo.text)
+        const index = todosList.findIndex(todo => todo.text === updateTodo.text || todo.description === updateTodo.description)
         const newTodos = [...todosList]
         newTodos[index] = updateTodo
         saveItem(newTodos)
@@ -46,30 +48,34 @@ function TodoProvider({ children }) {
         saveItem(newTodos)
     }
 
-    const addTodos = (text) => {
+    const addTodos = (text, description = '') => {
         const newTodos = [...todosList]
-        newTodos.push({ text: text, completed: false, description: '' }) // Add a new todo with the text and the completed status. Will modificated to add a description and a date
+        newTodos.push({ text: text, completed: false, description: description }) // Add a new todo with the text and the completed status. Will modificated to add a description and a date
         saveItem(newTodos)
     }
 
     return (
         <TodoContext.Provider value={{
             loading,
-            error, 
+            error,
             openModalAdd,
             setOpenModalAdd,
             openAddEmptyModal,
             setOpenAddEmptyModal,
             openOneCharModal,
             setOpenOneCharModal,
-            openAddDescriptionModal, 
+            openAddDescriptionModal,
             setOpenAddDescriptionModal,
+            titleValue,
+            setTitleValue,
+            descriptionValue,
+            setDescriptionValue,
             searchValue,
             setSearchValue,
             searchedTodos,
             updateTodos,
             deleteTodos,
-            addTodos, 
+            addTodos,
             todosList,
             localStorageItem
         }}>
