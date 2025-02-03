@@ -17,10 +17,10 @@ function TodoProvider({ children }) {
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
     const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
     const [openAddDescriptionModal, setOpenAddDescriptionModal] = React.useState(false)
-    
+
     const [titleValue, setTitleValue] = React.useState('') // usado para asignar el titulo de la tarea cuando el modal de agregar tarea esta abierto
     const [descriptionValue, setDescriptionValue] = React.useState('') // usado para asignar la descripcion de la tarea cuando el modal de agregar tarea esta abierto
-    const [searchValue, setSearchValue] = React.useState('')
+    const [searchValue, setSearchValue] = React.useState('') // usado para guardar temporalmente el valor escrito en el input de busqueda
 
     const searchedTodos = todosList.filter(
         todo => {
@@ -37,6 +37,8 @@ function TodoProvider({ children }) {
     const updateTodos = (updateTodo) => {
         const index = todosList.findIndex(todo => todo.text === updateTodo.text || todo.description === updateTodo.description)
         const newTodos = [...todosList]
+        const updateDate = new Date().toUTCString()
+        updateTodo.date = updateDate
         newTodos[index] = updateTodo
         saveItem(newTodos)
     }
@@ -44,14 +46,19 @@ function TodoProvider({ children }) {
     const deleteTodos = (todoToRemove) => {
         const index = todosList.findIndex(todo => todo.text === todoToRemove.text)
         const newTodos = [...todosList]
-        newTodos.splice(index, 1)
-        saveItem(newTodos)
+        newTodos.splice(index, 1) // Remove the todo from the list
+        saveItem(newTodos) // Save the new todo in the local storage
     }
 
     const addTodos = (text, description = '') => {
+        console.log('todoText', text);
+        console.log('todoDescription', description);
+        
+        
         const newTodos = [...todosList]
-        newTodos.push({ text: text, completed: false, description: description }) // Add a new todo with the text and the completed status. Will modificated to add a description and a date
-        saveItem(newTodos)
+        const creationDate = new Date().toUTCString()
+        newTodos.push({ text: text, completed: false, description: description, date: creationDate}) // Add a new todo with the text and the completed status
+        saveItem(newTodos)  // Save the new todo in the local storage
     }
 
     return (

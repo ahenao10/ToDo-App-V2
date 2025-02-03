@@ -6,6 +6,15 @@ import { TodoContext } from '../../TodoContext';
 function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', descriptionTodoValue = '' }) {
 
     const { setOpenAddEmptyModal, addTodos, setTitleValue, setDescriptionValue, todosList, updateTodos } = React.useContext(TodoContext)
+    const [todoDate, setTodoDate] = React.useState('')
+
+    React.useEffect(() => {
+        const todoSelected = todosList.find(todo => todo.text === titleTodoValue || todo.description === descriptionTodoValue)
+        if (todoSelected){
+            setTodoDate(todoSelected.date);
+            return
+        }
+    },[todosList, titleTodoValue, descriptionTodoValue])    
 
     function addTodoButtonOnclick() {
         let titleTodo = document.getElementById('title').value;
@@ -24,14 +33,13 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
             setDescriptionValue('')
             return
         } else { // If the todo is not in the list, add the todo
-            addTodos(titleTodo, descriptionTodo) 
+            addTodos(titleTodo, descriptionTodo)
             setOpenAddDescriptionModal(false)
             setTitleValue('')
             setDescriptionValue('')
             return
         }
     }
-
 
     return (
         <div className="modal-todos" id='add-todo-description'>
@@ -40,6 +48,7 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
             <input type="text" id="title" name="description" defaultValue={titleTodoValue} />
             <label htmlFor="description">Descripcion: </label>
             <textarea id="description" name="description" rows="4" cols="50" defaultValue={descriptionTodoValue} />
+            <span id="todo-date">{`Ultima actualización: ${todoDate}`}</span>
             <div className="buttons-container">
                 <button
                     className="close-modal"

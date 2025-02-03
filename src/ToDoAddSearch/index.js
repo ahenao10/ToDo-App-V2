@@ -4,20 +4,23 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal ,searchValue, setSearchValue, addTodos } = React.useContext(TodoContext)
+    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal, searchValue, setSearchValue, addTodos } = React.useContext(TodoContext)
 
     const [tempText, setTempText] = React.useState('') // Temporal text to add a new todo, transmit the value to the button and the button to the addTodos function
 
     function validateOneCaracter() {
         const input = document.getElementById('search-input')
-        if (input && input.value.length <= 2) {
+        if (!input.value) {
+            setOpenAddEmptyModal(true)
+            return
+        } else if (input.value.length <= 2) {
             setOpenOneCharModal(true)
             return
         } else {
             addValueTodosOnClick()
             countLetters()
         }
-    }
+    };
 
     function captureValueOnChange(e) {
         setSearchValue(e.target.value)
@@ -29,9 +32,10 @@ function ToDoAddSearch() {
             setTempText('')
             return
         }
-    }
+    };
 
     function addValueTodosOnClick() {
+
         if (!searchValue) {
             setOpenAddEmptyModal(true)
             return
@@ -39,16 +43,15 @@ function ToDoAddSearch() {
             setOpenModalAdd(true)
             return
         }
+        
         addTodos(tempText)
         setTempText('')
 
         const input = document.getElementById('search-input')
 
-        if (input) {
-            input.value = ''
-            setSearchValue('')
-        }
-    }
+        input.value = ''
+        setSearchValue('')
+    };
 
     function countLetters() {
         const input = document.getElementById('search-input')
@@ -59,7 +62,7 @@ function ToDoAddSearch() {
             lettersCounter.innerText = `${0}/${30}` // If the input is not found,
             return
         }
-    }
+    };
 
     return (
         <div className="search-container">
