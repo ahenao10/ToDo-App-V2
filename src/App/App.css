@@ -7,6 +7,21 @@
   justify-content: center;
 }
 
+.App-header {
+  position: absolute;
+  width: 100%;
+  justify-content: space-between;
+  top: 0;
+}
+
+.App-header button {
+  margin: 24px;
+  background-color: #31304D;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
 .todos-container {
   display: flex;
   flex-direction: column;

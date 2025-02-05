@@ -12,6 +12,7 @@ import { AddEmptyTodoModal } from '../Modals/AddEmptyTodoModal/index.js';
 import { OneCharModal } from '../Modals/OneCharModal/index.js';
 import { AddTodoDescription } from '../Modals/AddTodoDescription/index.js';
 import { EmptyList } from '../EmptyList/index.js';
+import { Dashboard } from '../Modals/DashboardModal/index.js';
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
     setOpenOneCharModal,
     openAddDescriptionModal,
     setOpenAddDescriptionModal,
+    openDashboard,
+    setOpenDashboard,
     titleValue,
     descriptionValue,
     searchedTodos: todos,
@@ -38,6 +41,9 @@ function App() {
 
   return (
     <div className="App">
+      <header className="App-header">
+        <button onClick={() => setOpenDashboard(true)}>Dashboard</button>
+      </header>
       <div className="todos-container">
         <h2>ToDo List</h2>
         <ToDoAddSearch />
@@ -66,7 +72,10 @@ function App() {
           <OneCharModal setOpenOneCharModal={setOpenOneCharModal} />
         </Modals>}
         {openAddDescriptionModal && <Modals>
-          <AddTodoDescription setOpenAddDescriptionModal={setOpenAddDescriptionModal} titleTodoValue={titleValue} descriptionTodoValue={descriptionValue}/>
+          <AddTodoDescription setOpenAddDescriptionModal={setOpenAddDescriptionModal} titleTodoValue={titleValue} descriptionTodoValue={descriptionValue} />
+        </Modals>}
+        {openDashboard && <Modals>
+          <Dashboard setOpenDashboard={setOpenDashboard}/>
         </Modals>}
       </div>
     </div>
