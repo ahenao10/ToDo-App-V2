@@ -13,7 +13,7 @@ import { OneCharModal } from '../Modals/OneCharModal/index.js';
 import { AddTodoDescription } from '../Modals/AddTodoDescription/index.js';
 import { EmptyList } from '../EmptyList/index.js';
 import { Dashboard } from '../Modals/DashboardModal/index.js';
-
+import { ChartContext } from '../TodoContext/ChartContext.js';
 
 function App() {
 
@@ -28,8 +28,6 @@ function App() {
     setOpenOneCharModal,
     openAddDescriptionModal,
     setOpenAddDescriptionModal,
-    openDashboard,
-    setOpenDashboard,
     titleValue,
     descriptionValue,
     searchedTodos: todos,
@@ -38,6 +36,11 @@ function App() {
     todosList,
     localStorageItem
   } = React.useContext(TodoContext);
+
+  const {
+    openDashboard,
+    setOpenDashboard
+  } = React.useContext(ChartContext);
 
   return (
     <div className="App">
@@ -75,7 +78,7 @@ function App() {
           <AddTodoDescription setOpenAddDescriptionModal={setOpenAddDescriptionModal} titleTodoValue={titleValue} descriptionTodoValue={descriptionValue} />
         </Modals>}
         {openDashboard && <Modals>
-          <Dashboard setOpenDashboard={setOpenDashboard}/>
+          <Dashboard setOpenDashboard={setOpenDashboard} />
         </Modals>}
       </div>
     </div>

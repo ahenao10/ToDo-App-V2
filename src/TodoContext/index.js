@@ -17,7 +17,6 @@ function TodoProvider({ children }) {
     const [openAddEmptyModal, setOpenAddEmptyModal] = React.useState(false)
     const [openOneCharModal, setOpenOneCharModal] = React.useState(false)
     const [openAddDescriptionModal, setOpenAddDescriptionModal] = React.useState(false)
-    const [openDashboard, setOpenDashboard] = React.useState(false)
 
     const [titleValue, setTitleValue] = React.useState('') // usado para asignar el titulo de la tarea cuando el modal de agregar tarea esta abierto
     const [descriptionValue, setDescriptionValue] = React.useState('') // usado para asignar la descripcion de la tarea cuando el modal de agregar tarea esta abierto
@@ -74,8 +73,6 @@ function TodoProvider({ children }) {
             setOpenOneCharModal,
             openAddDescriptionModal,
             setOpenAddDescriptionModal,
-            openDashboard,
-            setOpenDashboard,
             titleValue,
             setTitleValue,
             descriptionValue,
