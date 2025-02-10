@@ -1,5 +1,6 @@
 import React from "react"
 import { useLocalStorage } from "./useLocalStorage";
+import todoStadistics from '../Data/todoStadistics.json'
 
 const TodoContext = React.createContext();
 
@@ -44,20 +45,31 @@ function TodoProvider({ children }) {
     }
 
     const deleteTodos = (todoToRemove) => {
+
+        const deleteDate = new Date()
+
         const index = todosList.findIndex(todo => todo.text === todoToRemove.text)
         const newTodos = [...todosList]
         newTodos.splice(index, 1) // Remove the todo from the list
+
+        todoStadistics[deleteDate.getDay()].deleted += 1;
+        
         saveItem(newTodos) // Save the new todo in the local storage
     }
 
     const addTodos = (text, description = '') => {
-        console.log('todoText', text);
-        console.log('todoDescription', description);
-        
-        
+
         const newTodos = [...todosList]
-        const creationDate = new Date().toUTCString()
-        newTodos.push({ text: text, completed: false, description: description, date: creationDate}) // Add a new todo with the text and the completed status
+        const creationDate = new Date()
+        newTodos.push({
+            text: text,
+            completed: false,
+            description: description,
+            creationDate: creationDate.toUTCString()
+        }) // Add a new todo with the text and the completed status
+
+        todoStadistics[creationDate.getDay()].created += 1;
+
         saveItem(newTodos)  // Save the new todo in the local storage
     }
 
