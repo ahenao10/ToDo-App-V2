@@ -1,6 +1,5 @@
 [
     {
-        "name": 0,
         "label": "Sunday",
         "value": 70,
         "created": 35,
@@ -8,7 +7,6 @@
         "deleted": 10
     },
     {
-        "name": 1,
         "label": "Monday",
         "value": 0,
         "created": 5,
@@ -16,7 +14,6 @@
         "deleted": 0
     },
     {
-        "name": 2,
         "label": "Tuesday",
         "value": 20,
         "created": 10,
@@ -25,7 +22,6 @@
 
     },
     {
-        "name": 3,
         "label": "Wednesday",
         "value": 30,
         "created": 15,
@@ -33,7 +29,6 @@
         "deleted": 5
     },
     {   
-        "name": 4,
         "label": "Thursday",
         "value": 40,
         "created": 20,
@@ -41,7 +36,6 @@
         "deleted": 10
     },
     {
-        "name": 5,
         "label": "Friday",
         "value": 50,
         "created": 25,
@@ -49,7 +43,6 @@
         "deleted": 10
     },
     {
-        "id": 6,
         "label": "Saturday",
         "value": 60,
         "created": 30,
