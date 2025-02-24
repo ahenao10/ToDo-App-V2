@@ -11,7 +11,7 @@ function TodoProvider({ children }) {
         error,
         items: todosList,
         saveItem,
-        localStorageItem
+        // localStorageItem
     } = useLocalStorage('TodosV1', [])
 
     const [openModalAdd, setOpenModalAdd] = React.useState(false)
@@ -22,6 +22,8 @@ function TodoProvider({ children }) {
     const [titleValue, setTitleValue] = React.useState('') // usado para asignar el titulo de la tarea cuando el modal de agregar tarea esta abierto
     const [descriptionValue, setDescriptionValue] = React.useState('') // usado para asignar la descripcion de la tarea cuando el modal de agregar tarea esta abierto
     const [searchValue, setSearchValue] = React.useState('') // usado para guardar temporalmente el valor escrito en el input de busqueda
+
+    console.log(todosList)
 
     const searchedTodos = todosList.filter(
         todo => {
@@ -39,7 +41,7 @@ function TodoProvider({ children }) {
         const index = todosList.findIndex(todo => todo.text === updateTodo.text || todo.description === updateTodo.description)
         const newTodos = [...todosList]
         const updateDate = new Date().toUTCString()
-        updateTodo.date = updateDate
+        updateTodo.updateDate = updateDate
         newTodos[index] = updateTodo
         saveItem(newTodos)
     }
@@ -60,6 +62,7 @@ function TodoProvider({ children }) {
     const addTodos = (text, description = '') => {
 
         const newTodos = [...todosList]
+        console.log('addtodos', newTodos)   
         const creationDate = new Date()
         newTodos.push({
             text: text,
@@ -96,7 +99,7 @@ function TodoProvider({ children }) {
             deleteTodos,
             addTodos,
             todosList,
-            localStorageItem
+            // localStorageItem
         }}>
             {children}
         </TodoContext.Provider>

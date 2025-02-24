@@ -34,7 +34,7 @@ function App() {
     updateTodos,
     deleteTodos,
     todosList,
-    localStorageItem
+    // localStorageItem
   } = React.useContext(TodoContext);
 
   const {
@@ -46,6 +46,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={() => setOpenDashboard(true)}>Dashboard</button>
+        <button onClick={async function () {
+          const response = await fetch('http://localhost:3001/click').then(response => response.json());
+          response && console.log(response.saludo);
+        }}>Click me!</button>
       </header>
       <div className="todos-container">
         <h2>ToDo List</h2>
@@ -53,7 +57,7 @@ function App() {
         <TodoList>
           {loading && <TodosLoading />}
           {error && <TodosError error={error} />}
-          {((!loading && todosList.length === 0) || !localStorageItem) && <EmptyList />}
+          {((!loading && todosList.length === 0) || !todosList) && <EmptyList />} {/*se cambio localstorageitem por todoslist, verificar en un futuro por posible mal funcionamiento de EmptyList*/}
           {!loading && todos.map((todo, index) => (
             <TodoItem
               key={index}

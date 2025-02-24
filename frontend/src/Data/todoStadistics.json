@@ -1,0 +1,45 @@
+[
+    {
+        "label": "Sunday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    },
+    {
+        "label": "Monday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    },
+    {
+        "label": "Tuesday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+
+    },
+    {
+        "label": "Wednesday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    },
+    {   
+        "label": "Thursday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    },
+    {
+        "label": "Friday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    },
+    {
+        "label": "Saturday",
+        "created": 0,
+        "completed": 0,
+        "deleted": 0
+    }
+]

@@ -11,7 +11,7 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
     React.useEffect(() => {
         const todoSelected = todosList.find(todo => todo.text === titleTodoValue || todo.description === descriptionTodoValue)
         if (todoSelected){
-            setTodoDate(todoSelected.creationDate);
+            setTodoDate(todoSelected.updateDate || todoSelected.creationDate);
             return
         }
     },[todosList, titleTodoValue, descriptionTodoValue])    
