@@ -34,7 +34,6 @@ function App() {
     updateTodos,
     deleteTodos,
     todosList,
-    // localStorageItem
   } = React.useContext(TodoContext);
 
   const {
@@ -53,10 +52,10 @@ function App() {
       </header>
       <div className="todos-container">
         <h2>ToDo List</h2>
-        <ToDoAddSearch />
+        <ToDoAddSearch /> {/*TODO: Aleatoriamente esta añadiendo todos vacios*/}
         <TodoList>
           {loading && <TodosLoading />}
-          {error && <TodosError error={error} />}
+          {/* {error && <TodosError error={error} />} */}
           {((!loading && todosList.length === 0) || !todosList) && <EmptyList />} {/*se cambio localstorageitem por todoslist, verificar en un futuro por posible mal funcionamiento de EmptyList*/}
           {!loading && todos.map((todo, index) => (
             <TodoItem
