@@ -5,14 +5,17 @@ import { TodoContext } from "../TodoContext";
 
 function TodoItem({ text, description, completed, setTodos, deleteTodo }) {
 
-    const { setOpenAddDescriptionModal, setTitleValue, setDescriptionValue } = React.useContext(TodoContext)
+    const { setOpenAddDescriptionModal, setTitleValue, setDescriptionValue, todosList } = React.useContext(TodoContext)
+
+    const foundTodo = todosList.find(todo => todo.text === text || todo.description === description)
 
     return (
         <li className={`todo-item ${completed ? 'completed-todo' : ''}`}>
             <div>
                 <BsCheckSquareFill
                     onClick={() => {
-                        setTodos({ text: text, completed: !completed })
+                        const todoToUpdate = { ...foundTodo, text: text, description: description, completed: !completed }
+                        setTodos(todoToUpdate)
                     }}
                     className={`icon-check ${completed ? 'icon-check-completed' : ''}`} />
                 <p onClick={() => {

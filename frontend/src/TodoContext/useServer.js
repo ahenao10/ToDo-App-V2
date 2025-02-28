@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function useServer(itemName, initialValue) {
+function useServer() {
 
     const URL = 'http://localhost:3001';
 
@@ -24,6 +24,7 @@ function useServer(itemName, initialValue) {
 
     React.useEffect(() => {
         if (itemToSave) {
+            
             fetch(`${URL}/mod-todos`, {
                 method: 'POST',
                 headers: {
@@ -52,15 +53,3 @@ function useServer(itemName, initialValue) {
 }
 
 export { useServer }
-
-// const todoItemsTemp = [
-//     { text: "Completar TodoSearch", completed: false },
-//     { text: "Terminar la aplicacion de react", completed: false },
-//     { text: "Estilizar componentes", completed: false },
-//     { text: "Instalar Kali Linux", completed: false },
-//     { text: "Dios mio, pero tengo que seguir", completed: false },
-// ];
-
-// localStorage.setItem('TodosV1', JSON.stringify(todoItemsTemp))
-
-// localStorage.removeItem('TodosV1')

@@ -1,12 +1,9 @@
 [
   {
-    "text": "Terminar aplicacion",
+    "text": "Primer todo de la listta",
     "completed": false,
-    "updateDate": "Tue, 25 Feb 2025 14:59:38 GMT"
-  },
-  {
-    "text": "Y seguir programando",
-    "completed": false,
-    "updateDate": "Tue, 25 Feb 2025 14:58:35 GMT"
+    "description": "Un nuevo todo",
+    "creationDate": "Fri, 28 Feb 2025 13:08:43 GMT",
+    "updateDate": "Fri, 28 Feb 2025 13:08:49 GMT"
   }
 ]

@@ -4,7 +4,7 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal, searchValue, setSearchValue, addTodos } = React.useContext(TodoContext)
+    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal, searchValue, setSearchValue, addTodos, countLetters } = React.useContext(TodoContext)
 
     const [tempText, setTempText] = React.useState('') // Temporal text to add a new todo, transmit the value to the button and the button to the addTodos function
 
@@ -53,23 +53,23 @@ function ToDoAddSearch() {
         setSearchValue('')
     };
 
-    function countLetters() {
-        const input = document.getElementById('search-input')
-        const lettersCounter = document.getElementById('letters-counter')
-        if (input && lettersCounter) {
-            lettersCounter.innerText = `${input.value.length}/${30}`
-        } else {
-            lettersCounter.innerText = `${0}/${30}` // If the input is not found,
-            return
-        }
-    };
+    // function countLetters() {
+    //     const input = document.getElementById('search-input')
+    //     const lettersCounter = document.getElementById('letters-counter')
+    //     if (input && lettersCounter) {
+    //         lettersCounter.innerText = `${input.value.length}/${30}`
+    //     } else {
+    //         lettersCounter.innerText = `${0}/${30}` // If the input is not found,
+    //         return
+    //     }
+    // };
 
     return (
         <div className="search-container">
             <input type="text" className="search-input" id="search-input" placeholder="Busca o añade una tarea"
                 onChange={(e) => {
                     captureValueOnChange(e)
-                    countLetters()
+                    countLetters(e, 'letters-counter-add', 30)
                 }}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
@@ -79,7 +79,7 @@ function ToDoAddSearch() {
                 maxLength={30}
                 size={30}
                 autoComplete="off" />
-            <span id="letters-counter">{`${0}/${30}`}</span>
+            <span id="letters-counter-add">{`${0}/${30}`}</span>
             <button
                 onClick={() => {
                     // validateOneCaracter()

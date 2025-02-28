@@ -68,6 +68,17 @@ function TodoProvider({ children }) {
         saveItem({ data: newTodo, op: 'add' })
     }
 
+    const countLetters = (event, spanId, limit) => {
+        const input = event.target
+        const lettersCounter = document.getElementById(spanId)
+        if (input && lettersCounter) {
+            lettersCounter.innerText = `${input.value.length}/${limit}`
+        } else {
+            lettersCounter.innerText = `${0}/${limit}` // If the input is not found,
+            return
+        }
+    };
+
     return (
         <TodoContext.Provider value={{
             loading,
@@ -91,6 +102,7 @@ function TodoProvider({ children }) {
             deleteTodos,
             addTodos,
             todosList,
+            countLetters
         }}>
             {children}
         </TodoContext.Provider>
