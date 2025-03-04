@@ -4,6 +4,13 @@
     "completed": false,
     "description": "Un nuevo todo",
     "creationDate": "Fri, 28 Feb 2025 13:08:43 GMT",
-    "updateDate": "Fri, 28 Feb 2025 13:08:49 GMT"
+    "updateDate": "Tue, 04 Mar 2025 13:54:37 GMT"
+  },
+  {
+    "text": "Una nueva tarea",
+    "completed": false,
+    "description": "Con descripcion",
+    "creationDate": "Sat, 01 Mar 2025 02:40:32 GMT",
+    "updateDate": "Tue, 04 Mar 2025 13:54:52 GMT"
   }
 ]

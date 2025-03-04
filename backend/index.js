@@ -1,6 +1,8 @@
 let todos = require('./TodoFunctions/todos.json');
 const operations = require('./TodoFunctions/index.js');
 
+const stadistics = require('./TodoStadistics/todoStadistics.json');
+
 const express = require('express');
 const cors = require('cors');
 
@@ -38,6 +40,11 @@ app.post('/mod-todos', (req, res) => {
   }
 
 })
+
+app.get('/stadistics', (req, res) => {
+  res.json(stadistics);
+  console.log('Stadistics sent!');
+});
 
 app.listen(PORT, (err) => {
   console.log(`Server is running on port: ${PORT}`);

@@ -2,9 +2,11 @@ import './Dashboard.css'
 import { BsX } from 'react-icons/bs'
 import 'chart.js/auto'
 import { Bar, Line } from 'react-chartjs-2'
-import todoStadistics from '../../Data/todoStadistics.json'
+import { useServerDashboard } from '../../TodoContext/useServerDashboard'
 
 function Dashboard({ setOpenDashboard }) {
+
+    const { todoStadistics } = useServerDashboard()
 
     const dataCreated = todoStadistics.map((data) => data.created)
 

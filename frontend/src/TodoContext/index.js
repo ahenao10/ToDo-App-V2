@@ -1,6 +1,5 @@
 import React from "react"
 import { useServer } from "./useServer";
-import todoStadistics from '../Data/todoStadistics.json'
 
 const TodoContext = React.createContext();
 
