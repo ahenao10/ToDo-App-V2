@@ -5,7 +5,7 @@ import { TodoContext } from '../../TodoContext';
 
 function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', descriptionTodoValue = '' }) {
 
-    const { setOpenAddEmptyModal, addTodos, setTitleValue, setDescriptionValue, todosList, updateTodos, countLetters } = React.useContext(TodoContext)
+    const { setOpenAddEmptyModal, addTodos, setTitleValue, setDescriptionValue, todosList, updateTodos, countLetters, setSearchValue} = React.useContext(TodoContext)
     const [todoDate, setTodoDate] = React.useState('')
 
     React.useEffect(() => {
@@ -20,28 +20,25 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
         let titleTodo = document.getElementById('title').value;
         let descriptionTodo = document.getElementById('description').value;
 
-        const foundTodo = todosList.find(todo => todo.text === titleTodo || todo.description === descriptionTodo)
-
-        if (titleTodo === '' && descriptionTodo === '') {
+        if (!titleTodo && !descriptionTodo) {
             setOpenAddEmptyModal(true)
-            return
-        } else if (titleTodo === '') {
-            setOpenAddEmptyModal(true)
-            return
-        } else if (foundTodo) { // If the todo is already in the list, update the todo
-            const todoToUpdate = { ...foundTodo, text: titleTodo, description: descriptionTodo }
-            updateTodos(todoToUpdate)
-            setOpenAddDescriptionModal(false)
-            setTitleValue('')
-            setDescriptionValue('')
-            return
-        } else { // If the todo is not in the list, add the todo
-            addTodos(titleTodo, descriptionTodo)
-            setOpenAddDescriptionModal(false)
-            setTitleValue('')
-            setDescriptionValue('')
             return
         }
+
+        const foundTodo = todosList?.find(todo => todo.text === titleTodo || todo.description === descriptionTodo) // optional chaining operator
+
+        if (foundTodo) {
+            const todoToUpdate = { ...foundTodo, text: titleTodo, description: descriptionTodo }
+            updateTodos(todoToUpdate)
+        } else {
+            addTodos(titleTodo, descriptionTodo)
+        }
+
+        setOpenAddDescriptionModal(false);
+        setTitleValue('');
+        setDescriptionValue('');
+        setSearchValue('');
+        document.getElementById('search-input').value = ''; // Clear the search input
     }
 
     return (
@@ -55,7 +52,7 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
                 maxLength={30}
                 size={30}
                 autoComplete='off' />
-            <span id="letters-counter-modal">{`${0}/${30}`}</span>
+            <span id="letters-counter-modal">{`${titleTodoValue.length}/${30}`}</span>
             <label htmlFor="description">Descripcion: </label>
             <textarea id="description" name="description" rows="4" cols="50" defaultValue={descriptionTodoValue}
                 placeholder='Escribe una descripcion'
@@ -64,7 +61,7 @@ function AddTodoDescription({ setOpenAddDescriptionModal, titleTodoValue = '', d
                 }
                 maxLength={250}
                 size={250} />
-            <span id="letters-counter-description">{`${0}/${250}`}</span>
+            <span id="letters-counter-description">{`${descriptionTodoValue.length}/${250}`}</span>
             <span id="todo-date">{`Ultima actualización: ${todoDate}`}</span>
             <div className="buttons-container">
                 <button

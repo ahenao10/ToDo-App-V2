@@ -24,7 +24,7 @@ function Dashboard({ setOpenDashboard }) {
                     onClick={() => setOpenDashboard(false)}></BsX>
             </div>
             <div className='dashboard-cards'>
-                <aside className="dashboard" id='dashboard-days'>
+                <div className="dashboard" id='dashboard-days'>
                     <h2>Days</h2>
                     <Bar
                         className='chart'
@@ -53,8 +53,8 @@ function Dashboard({ setOpenDashboard }) {
                             }]
                         }}
                     />
-                </aside>
-                <aside className="dashboard" id='dashboard-months'>
+                </div>
+                <div className="dashboard" id='dashboard-months'>
                     <h2>Months</h2>
                     <Line
                         className='chart'
@@ -83,7 +83,7 @@ function Dashboard({ setOpenDashboard }) {
                             }]
                         }}
                     />
-                </aside>
+                </div>
             </div>
         </div>
     )

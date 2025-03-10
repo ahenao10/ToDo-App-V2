@@ -2,6 +2,7 @@ let todos = require('./TodoFunctions/todos.json');
 const operations = require('./TodoFunctions/index.js');
 
 const stadistics = require('./TodoStadistics/todoStadistics.json');
+const { getStadistics } = require('./TodoStadistics/index.js');
 
 const express = require('express');
 const cors = require('cors');
@@ -25,7 +26,7 @@ app.get('/todos', (req, res) => {
 app.post('/mod-todos', (req, res) => {
   try {
     const todoToAdmin = req.body;
-    if(todoToAdmin.data !== null){
+    if (todoToAdmin.data !== null) {
 
       const result = operations[todoToAdmin.op](todoToAdmin.data);
       res.json(result || todos);
@@ -42,7 +43,8 @@ app.post('/mod-todos', (req, res) => {
 })
 
 app.get('/stadistics', (req, res) => {
-  res.json(stadistics);
+  const obtainStadistics = getStadistics();
+  res.json(obtainStadistics.Mar);
   console.log('Stadistics sent!');
 });
 

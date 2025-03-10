@@ -4,7 +4,7 @@ import { TodoContext } from "../TodoContext";
 
 function ToDoAddSearch() {
 
-    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal, searchValue, setSearchValue, addTodos, countLetters } = React.useContext(TodoContext)
+    const { setOpenModalAdd, setOpenOneCharModal, searchedTodos: todos, setOpenAddEmptyModal, setOpenAddDescriptionModal, searchValue, setSearchValue, addTodos, setTitleValue, countLetters } = React.useContext(TodoContext)
 
     const [tempText, setTempText] = React.useState('') // Temporal text to add a new todo, transmit the value to the button and the button to the addTodos function
 
@@ -18,7 +18,7 @@ function ToDoAddSearch() {
             return
         } else {
             addValueTodosOnClick()
-            countLetters()
+            countLetters(input, 'letters-counter-add', 30)
         }
     };
 
@@ -53,17 +53,6 @@ function ToDoAddSearch() {
         setSearchValue('')
     };
 
-    // function countLetters() {
-    //     const input = document.getElementById('search-input')
-    //     const lettersCounter = document.getElementById('letters-counter')
-    //     if (input && lettersCounter) {
-    //         lettersCounter.innerText = `${input.value.length}/${30}`
-    //     } else {
-    //         lettersCounter.innerText = `${0}/${30}` // If the input is not found,
-    //         return
-    //     }
-    // };
-
     return (
         <div className="search-container">
             <input type="text" className="search-input" id="search-input" placeholder="Busca o añade una tarea"
@@ -79,18 +68,15 @@ function ToDoAddSearch() {
                 maxLength={30}
                 size={30}
                 autoComplete="off" />
-            <span id="letters-counter-add">{`${0}/${30}`}</span>
+            <span id="letters-counter-add">{`${searchValue.length}/${30}`}</span>
             <button
                 onClick={() => {
-                    // validateOneCaracter()
+                    setTitleValue(searchValue)
                     setOpenAddDescriptionModal(true) // Open the modal to add a description
+
                 }}>+ Add</button>
         </div>
     )
 }
 
 export { ToDoAddSearch }
-
-
-
-// "[{"text":"Alejo","completed":false},{"text":"Idiotitas","completed":false},{"text":"Idiotas mas grandes","completed":false},{"text":"Par de idiotas","completed":false},{"text":"Jajajaja","completed":false},{"text":"Epajeeee","completed":false},{"text":"Joda socio tu sabes ","completed":false,"description":"Vea pues llavesita"},{"completed":false,"description":"Kagala"}]"

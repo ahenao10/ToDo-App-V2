@@ -1,11 +1,13 @@
 const fs = require('fs');
 let todos = require('./todos.json');
+const { addStadistics } = require('../TodoStadistics/index.js');
 
 module.exports = {
     add: (todoToAdd) => {
         try {
             todos.push(todoToAdd);
             fs.writeFileSync('./TodoFunctions/todos.json', JSON.stringify(todos, null, 2));
+            addStadistics(todoToAdd.date, 'created');
             console.log('Todo agregado!');
             return todos;
         } catch (error) {
