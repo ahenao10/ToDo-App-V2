@@ -35,7 +35,7 @@ function TodoProvider({ children }) {
 
     const updateTodos = (updateTodo) => {
 
-        const updateDate = new Date().toUTCString()
+        const updateDate = new Date()
         const updatedTodo = { ...updateTodo, updateDate: updateDate }
 
         saveItem({ data: updatedTodo, op: 'update' })
@@ -61,7 +61,7 @@ function TodoProvider({ children }) {
             text: text,
             completed: false,
             description: description,
-            creationDate: creationDate.toUTCString()
+            creationDate: creationDate
         }
 
         saveItem({ data: newTodo, op: 'add' })

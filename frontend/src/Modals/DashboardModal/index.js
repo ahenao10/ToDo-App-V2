@@ -1,3 +1,4 @@
+import React from 'react'
 import './Dashboard.css'
 import { BsX } from 'react-icons/bs'
 import 'chart.js/auto'
@@ -6,13 +7,25 @@ import { useServerDashboard } from '../../TodoContext/useServerDashboard'
 
 function Dashboard({ setOpenDashboard }) {
 
-    const { todoStadistics } = useServerDashboard()
+    const { todoStadisticsMonth, todoStadisticsYear } = useServerDashboard()
 
-    const dataCreated = todoStadistics.map((data) => data.created)
+    const dataCreated = todoStadisticsMonth.map((data) => data.created)
 
-    const dataCompleted = todoStadistics.map((data) => data.completed)
+    const dataCompleted = todoStadisticsMonth.map((data) => data.completed)
 
-    const dataDeleted = todoStadistics.map((data) => data.deleted)
+    const dataDeleted = todoStadisticsMonth.map((data) => data.deleted)
+
+
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth); // Actualiza el estado con el nuevo ancho
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [windowWidth]);
 
     return (
         <div className="dashboard-container">
@@ -29,7 +42,7 @@ function Dashboard({ setOpenDashboard }) {
                     <Bar
                         className='chart'
                         data={{
-                            labels: todoStadistics.map((data) => data.label),
+                            labels: todoStadisticsMonth.map((data) => data.label),
                             datasets: [{
                                 label: 'Created',
                                 data: dataCreated,
@@ -52,6 +65,11 @@ function Dashboard({ setOpenDashboard }) {
                                 borderWidth: 2
                             }]
                         }}
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }}
+                        key={windowWidth}
                     />
                 </div>
                 <div className="dashboard" id='dashboard-months'>
@@ -59,7 +77,7 @@ function Dashboard({ setOpenDashboard }) {
                     <Line
                         className='chart'
                         data={{
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                            labels: Object.keys(todoStadisticsYear),
                             datasets: [{
                                 label: 'Created',
                                 data: [30, 20, 25, 15, 10, 35, 5],
@@ -82,6 +100,11 @@ function Dashboard({ setOpenDashboard }) {
                                 borderWidth: 2
                             }]
                         }}
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }}
+                        key={windowWidth}
                     />
                 </div>
             </div>

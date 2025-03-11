@@ -1,37 +1,8 @@
 [
   {
-    "text": "Terminar aplicacion en React",
+    "text": "Creemos otra tarea",
     "completed": false,
-    "description": "Hacerlo en estos dias",
-    "creationDate": "Mon, 10 Mar 2025 12:33:57 GMT",
-    "updateDate": "Mon, 10 Mar 2025 13:10:11 GMT"
-  },
-  {
-    "text": "Estudiar el curso de React ",
-    "completed": false,
-    "description": "El nuevo, el advance",
-    "creationDate": "Mon, 10 Mar 2025 12:34:48 GMT",
-    "updateDate": "Mon, 10 Mar 2025 13:10:13 GMT"
-  },
-  {
-    "text": "Nueva tarea re x",
-    "completed": false,
-    "description": "Y aca la descripcion",
-    "creationDate": "Mon, 10 Mar 2025 13:05:40 GMT",
-    "updateDate": "Mon, 10 Mar 2025 13:10:14 GMT"
-  },
-  {
-    "text": "Otra tarea re x",
-    "completed": false,
-    "description": "Con su descripcion",
-    "creationDate": "Mon, 10 Mar 2025 13:06:44 GMT",
-    "updateDate": "Mon, 10 Mar 2025 13:10:17 GMT"
-  },
-  {
-    "text": "Otra nueva tarea",
-    "completed": false,
-    "description": "A;adendpooo",
-    "creationDate": "Mon, 10 Mar 2025 13:07:41 GMT",
-    "updateDate": "Mon, 10 Mar 2025 13:10:05 GMT"
+    "description": "",
+    "creationDate": "2025-03-11T13:56:04.298Z"
   }
 ]

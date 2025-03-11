@@ -1,7 +1,5 @@
 let todos = require('./TodoFunctions/todos.json');
 const operations = require('./TodoFunctions/index.js');
-
-const stadistics = require('./TodoStadistics/todoStadistics.json');
 const { getStadistics } = require('./TodoStadistics/index.js');
 
 const express = require('express');
@@ -44,7 +42,8 @@ app.post('/mod-todos', (req, res) => {
 
 app.get('/stadistics', (req, res) => {
   const obtainStadistics = getStadistics();
-  res.json(obtainStadistics.Mar);
+  const month = new Date().toLocaleString('default', { month: 'short' });
+  res.json(obtainStadistics);
   console.log('Stadistics sent!');
 });
 

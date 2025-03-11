@@ -1,290 +1,201 @@
 {
-    "Ene": {
-        "Semana 1": [
-            {
-                "label": "Sunday",
-                "created": 5,
-                "completed": 5,
-                "deleted": 0
-            },
-            {
-                "label": "Monday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Tuesday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Wednesday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Thursday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Friday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Saturday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            }
-        ],
-        "Semana 2": [
-            {
-                "label": "Sunday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Monday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Tuesday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Wednesday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Thursday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Friday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            },
-            {
-                "label": "Saturday",
-                "created": 0,
-                "completed": 0,
-                "deleted": 0
-            }
-        ]
+  "Ene": [],
+  "Feb": [],
+  "Mar": [
+    {
+      "label": 1,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
     },
-    "Feb": [],
-    "Mar": [
-        {
-            "label": 1,
-            "created": 5,
-            "completed": 5,
-            "deleted": 0
-        },
-        {
-            "label": 2,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 3,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 4,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 5,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 6,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 7,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 8,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 9,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 10,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 11,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 12,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 13,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 14,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 15,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 16,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 17,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 18,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 19,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 20,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 21,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 22,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 23,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 24,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 25,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 26,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 27,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 28,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 29,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 30,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        },
-        {
-            "label": 31,
-            "created": 0,
-            "completed": 0,
-            "deleted": 0
-        }
-    ],
-    "Apr": [],
-    "May": [],
-    "Jun": [],
-    "Jul": [],
-    "Aug": [],
-    "Sep": [],
-    "Oct": [],
-    "Nov": [],
-    "Dec": []
+    {
+      "label": 2,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 3,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 4,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 5,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 6,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 7,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 8,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 9,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 10,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 11,
+      "created": 6,
+      "completed": 5,
+      "deleted": 3
+    },
+    {
+      "label": 12,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 13,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 14,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 15,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 16,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 17,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 18,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 19,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 20,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 21,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 22,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 23,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 24,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 25,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 26,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 27,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 28,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 29,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 30,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    },
+    {
+      "label": 31,
+      "created": 0,
+      "completed": 0,
+      "deleted": 0
+    }
+  ],
+  "Apr": [],
+  "May": [],
+  "Jun": [],
+  "Jul": [],
+  "Aug": [],
+  "Sep": [],
+  "Oct": [],
+  "Nov": [],
+  "Dec": []
 }

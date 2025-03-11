@@ -7,7 +7,8 @@ module.exports = {
         try {
             todos.push(todoToAdd);
             fs.writeFileSync('./TodoFunctions/todos.json', JSON.stringify(todos, null, 2));
-            addStadistics(todoToAdd.date, 'created');
+            const createdDate = new Date(); 
+            addStadistics(createdDate, 'created');
             console.log('Todo agregado!');
             return todos;
         } catch (error) {
@@ -20,6 +21,12 @@ module.exports = {
             const index = todos.findIndex(todo => todoToUpdate.text === todo.text);
             if (index !== -1) {
                 todos[index] = todoToUpdate;
+
+                if(todoToUpdate.completed){
+                    const completedDate = new Date();
+                    addStadistics(completedDate, 'completed');
+                } // Si el todo se completo, se actualiza la estadistica
+
                 fs.writeFileSync('./TodoFunctions/todos.json', JSON.stringify(todos, null, 2));
                 console.log('Todo actualizado!');
                 return todos;
@@ -36,6 +43,8 @@ module.exports = {
         try {
             const index = todos.findIndex(todo => todoToDelete.text === todo.text);
             if (index !== -1) {
+                const deletedDate = new Date();
+                addStadistics(deletedDate, 'deleted');
                 todos.splice(index, 1);
                 fs.writeFileSync('./TodoFunctions/todos.json', JSON.stringify(todos, null, 2));
                 console.log('Todo eliminado!');
