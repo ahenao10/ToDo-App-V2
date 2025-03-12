@@ -15,6 +15,23 @@ function Dashboard({ setOpenDashboard }) {
 
     const dataDeleted = todoStadisticsMonth.map((data) => data.deleted)
 
+    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+
+    let dataCreatedYear = {}
+    let dataCompletedYear = {}
+    let dataDeletedYear = {}
+
+    months.forEach(month => {
+        dataCreatedYear[month.toLocaleLowerCase()] = todoStadisticsYear[month]?.reduce((acc, data) => acc + data.created, 0) || 0
+    })
+
+    months.forEach(month => {
+        dataCompletedYear[month.toLocaleLowerCase()] = todoStadisticsYear[month]?.reduce((acc, data) => acc + data.completed, 0) || 0
+    })
+
+    months.forEach(month => {
+        dataDeletedYear[month.toLocaleLowerCase()] = todoStadisticsYear[month]?.reduce((acc, data) => acc + data.deleted, 0) || 0
+    }) // Se obtienen los datos de los meses del año
 
     const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
@@ -80,21 +97,21 @@ function Dashboard({ setOpenDashboard }) {
                             labels: Object.keys(todoStadisticsYear),
                             datasets: [{
                                 label: 'Created',
-                                data: [30, 20, 25, 15, 10, 35, 5],
+                                data: Object.values(dataCreatedYear),
                                 backgroundColor: 'rgba(54, 162, 235, 0.6)',
                                 borderColor: 'rgba(54, 162, 235, 1)',
                                 borderWidth: 2
                             },
                             {
                                 label: 'Completed',
-                                data: [15, 10, 12, 7, 5, 18, 2],
+                                data: Object.values(dataCompletedYear),
                                 backgroundColor: 'rgba(255, 99, 132, 0.6)',
                                 borderColor: 'rgba(255, 99, 132, 1)',
                                 borderWidth: 2
                             },
                             {
                                 label: 'Deleted',
-                                data: [5, 2, 3, 1, 1, 6, 0],
+                                data: Object.values(dataDeletedYear),
                                 backgroundColor: 'rgba(75, 192, 192, 0.6)',
                                 borderColor: 'rgba(75, 192, 192, 1)',
                                 borderWidth: 2

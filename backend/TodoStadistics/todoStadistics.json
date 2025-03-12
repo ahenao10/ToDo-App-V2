@@ -70,9 +70,9 @@
     },
     {
       "label": 12,
-      "created": 0,
+      "created": 1,
       "completed": 0,
-      "deleted": 0
+      "deleted": 1
     },
     {
       "label": 13,
@@ -189,11 +189,11 @@
       "deleted": 0
     }
   ],
-  "Apr": [],
+  "Abr": [],
   "May": [],
   "Jun": [],
   "Jul": [],
-  "Aug": [],
+  "Ago": [],
   "Sep": [],
   "Oct": [],
   "Nov": [],
