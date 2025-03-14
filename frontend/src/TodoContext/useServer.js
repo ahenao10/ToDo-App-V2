@@ -2,7 +2,7 @@ import React from "react";
 
 function useServer() {
 
-    const URL = 'http://localhost:3001';
+    const URL = 'https://todo-app-v2-mlad.onrender.com';
 
     const [items, setItems] = React.useState([]);
 

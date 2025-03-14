@@ -46,7 +46,7 @@ function App() {
       <header className="App-header">
         <button onClick={() => setOpenDashboard(true)}>Dashboard</button>
         <button onClick={async function () {
-          const response = await fetch('http://localhost:3001/click').then(response => response.json());
+          const response = await fetch('https://todo-app-v2-mlad.onrender.com/click').then(response => response.json());
           response && alert(response);
         }}>Click me!</button>
       </header>

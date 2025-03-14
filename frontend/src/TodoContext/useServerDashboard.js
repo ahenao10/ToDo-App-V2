@@ -7,7 +7,7 @@ function useServerDashboard() {
 
     const month = new Date().toLocaleString('default', { month: 'short' });
 
-    const URL = 'http://localhost:3001';
+    const URL = 'https://todo-app-v2-mlad.onrender.com';
 
     React.useEffect(() => {
         fetch(`${URL}/stadistics`)
