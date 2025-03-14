@@ -1,6 +1,8 @@
 let todos = require('./TodoFunctions/todos.json');
 const operations = require('./TodoFunctions/index.js');
 const { getStadistics } = require('./TodoStadistics/index.js');
+const frases = require('./TodoClick/index.json');
+let click = 0;
 
 const express = require('express');
 const cors = require('cors');
@@ -12,8 +14,18 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/click', (req, res) => {
-  res.json({ saludo: 'Hola mundo' });
-  console.log('Clicked!');
+  while (click < frases.length) {
+    res.json(frases[click]);
+    console.log('Clicked!');
+    click++;
+    return;
+  }
+  if (click === frases.length) {
+    click = 0;
+    res.json(frases[click]);
+    console.log('Clicked!');
+    click++;
+  }
 });
 
 app.get('/todos', (req, res) => {

@@ -23,7 +23,6 @@ function getStadistics(){
     return stadistics;
 }
 
-// exports.getStadistics = getStadistics;
 module.exports = {
     getStadistics, 
     addStadistics

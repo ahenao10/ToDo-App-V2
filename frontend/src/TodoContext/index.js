@@ -7,7 +7,7 @@ function TodoProvider({ children }) {
 
     const {
         loading,
-        error,
+        // error,
         items: todosList,
         saveItem,
     } = useServer('TodosV1', [])
@@ -42,15 +42,6 @@ function TodoProvider({ children }) {
     }
 
     const deleteTodos = (todoToRemove) => {
-
-        // const deleteDate = new Date()
-
-        // const index = todosList.findIndex(todo => todo.text === todoToRemove.text)
-        // const newTodos = [...todosList]
-        // newTodos.splice(index, 1) // Remove the todo from the list
-
-        // todoStadistics[deleteDate.getDay()].deleted += 1;
-
         saveItem({data: todoToRemove, op: 'delete' }) // Save the new todo in the local storage
     }
 
@@ -81,7 +72,7 @@ function TodoProvider({ children }) {
     return (
         <TodoContext.Provider value={{
             loading,
-            error,
+            // error,
             openModalAdd,
             setOpenModalAdd,
             openAddEmptyModal,

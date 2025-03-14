@@ -5,7 +5,7 @@ import { TodoItem } from '../TodoItem';
 import './App.css';
 import { TodoList } from '../TodoList';
 import { TodosLoading } from '../TodosLoading';
-import { TodosError } from '../TodosError/index.js';
+// import { TodosError } from '../TodosError/index.js';
 import { Modals } from '../Modals/index.js';
 import { TodoAddSearchModal } from '../Modals/TodoAddSearchModal/index.js';
 import { AddEmptyTodoModal } from '../Modals/AddEmptyTodoModal/index.js';
@@ -19,7 +19,7 @@ function App() {
 
   const {
     loading,
-    error,
+    // error,
     openModalAdd,
     setOpenModalAdd,
     openAddEmptyModal,
@@ -47,12 +47,12 @@ function App() {
         <button onClick={() => setOpenDashboard(true)}>Dashboard</button>
         <button onClick={async function () {
           const response = await fetch('http://localhost:3001/click').then(response => response.json());
-          response && console.log(response.saludo);
+          response && alert(response);
         }}>Click me!</button>
       </header>
       <div className="todos-container">
         <h2>ToDo List</h2>
-        <ToDoAddSearch /> {/*TODO: Aleatoriamente esta añadiendo todos vacios*/}
+        <ToDoAddSearch />
         <TodoList>
           {loading && <TodosLoading />}
           {/* {error && <TodosError error={error} />} */}
