@@ -54,7 +54,6 @@ app.post('/mod-todos', (req, res) => {
 
 app.get('/stadistics', (req, res) => {
   const obtainStadistics = getStadistics();
-  const month = new Date().toLocaleString('default', { month: 'short' });
   res.json(obtainStadistics);
   console.log('Stadistics sent!');
 });
