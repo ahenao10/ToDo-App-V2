@@ -9,11 +9,11 @@ function Dashboard({ setOpenDashboard }) {
 
     const { todoStadisticsMonth, todoStadisticsYear } = useServerDashboard()
 
-    const dataCreated = todoStadisticsMonth.map((data) => data.created)
+    const dataCreated = todoStadisticsMonth.map((data) => data.created) || 0
 
-    const dataCompleted = todoStadisticsMonth.map((data) => data.completed)
+    const dataCompleted = todoStadisticsMonth.map((data) => data.completed) || 0
 
-    const dataDeleted = todoStadisticsMonth.map((data) => data.deleted)
+    const dataDeleted = todoStadisticsMonth.map((data) => data.deleted) || 0 // Se obtienen los datos de los días del mes
 
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
