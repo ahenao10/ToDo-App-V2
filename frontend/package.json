@@ -40,7 +40,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ahenao10.github.io/ToDo-App-V2",
   "devDependencies": {
     "gh-pages": "^6.2.0"
   }
