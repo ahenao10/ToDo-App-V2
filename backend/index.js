@@ -6,12 +6,22 @@ let click = 0;
 
 const express = require('express');
 const cors = require('cors');
+const allowedOrigins = ['http://localhost:3000', 'https://to-do-app-v2-pearl.vercel.app'];
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 app.get('/click', (req, res) => {
   while (click < frases.length) {

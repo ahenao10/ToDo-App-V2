@@ -56,8 +56,9 @@ function App() {
         <TodoList>
           {loading && <TodosLoading />}
           {/* {error && <TodosError error={error} />} */}
-          {((!loading && todosList.length === 0) || !todosList) && <EmptyList />} {/*se cambio localstorageitem por todoslist, verificar en un futuro por posible mal funcionamiento de EmptyList*/}
-          {!loading && todos.map((todo, index) => (
+          {/* {((!loading && todosList?.length === 0) || !todosList) && <EmptyList />} se cambio localstorageitem por todoslist, verificar en un futuro por posible mal funcionamiento de EmptyList */}
+          {((!loading && !todosList) || todosList?.length === 0) && <EmptyList />}
+          {!loading && todos?.map((todo, index) => (
             <TodoItem
               key={index}
               text={todo.text}

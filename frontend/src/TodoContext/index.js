@@ -21,7 +21,7 @@ function TodoProvider({ children }) {
     const [descriptionValue, setDescriptionValue] = React.useState('') // usado para asignar la descripcion de la tarea cuando el modal de agregar tarea esta abierto
     const [searchValue, setSearchValue] = React.useState('') // usado para guardar temporalmente el valor escrito en el input de busqueda
 
-    const searchedTodos = todosList.filter(
+    const searchedTodos = todosList?.filter(
         todo => {
 
             const noTildes = (text) => {

@@ -4,7 +4,7 @@ function useServer() {
 
     const URL = 'https://todo-app-v2-mlad.onrender.com';
 
-    const [items, setItems] = React.useState([]);
+    const [items, setItems] = React.useState();
 
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(false);
@@ -16,8 +16,8 @@ function useServer() {
             fetch(`${URL}/todos`)
                 .then(response => response.json())
                 .then(data => setItems(data))
-                .then(setLoading(false))
                 .catch(error => setError(error))
+                .finally(() => setLoading(false))
         }, 2000)
     }, [])
 
