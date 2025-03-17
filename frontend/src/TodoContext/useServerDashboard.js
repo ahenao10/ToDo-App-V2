@@ -6,7 +6,7 @@ function useServerDashboard() {
     const [todoStadisticsYear, setTodoStadisticsYear] = React.useState([]);
 
     // const month = new Date().toLocaleString('es-CO', { month: 'short' });
-    const month = new Date().toString().split(' ')[1];;
+    const month = new Date().toString().split(' ')[1];
 
     const URL = 'https://todo-app-v2-mlad.onrender.com';
 
