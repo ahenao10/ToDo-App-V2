@@ -1,63 +1,29 @@
 [
   {
-    "text": "Nueva tarea por imbecil",
+    "text": "Terminar aplicacion",
     "completed": false,
-    "description": "Esta creado amigo",
+    "description": "La aplicacion está lista",
     "creationDate": "2025-03-12T14:45:20.512Z"
   },
   {
-    "text": "Otra nueva tarea",
+    "text": "Probar la aplicacion",
     "completed": false,
-    "description": "",
+    "description": "Aplicacion lista para probar",
     "creationDate": "2025-03-14T12:16:05.443Z",
     "updateDate": "2025-03-14T13:59:59.288Z"
   },
   {
-    "text": "A veeeeerrr",
+    "text": "Desplegar la aplicacion",
     "completed": false,
-    "description": "",
+    "description": "Aplicacion lista para desplegar",
     "creationDate": "2025-03-14T12:16:05.443Z",
     "updateDate": "2025-03-14T14:00:01.112Z"
   },
   {
-    "text": "Nueva tareaaaaaaa",
+    "text": "Descripcion de esta aplicacion",
     "completed": false,
-    "description": "",
+    "description": "La aplicacion es un demo. No usa una DB por lo tanto, aunque se puede probar y usar, no se guardan los datos debido a que esta desplegada desde un repositorio de GitHub con json estatico.",
     "creationDate": "2025-03-14T12:16:05.443Z",
     "updateDate": "2025-03-14T13:40:39.997Z"
-  },
-  {
-    "text": "Esto ya se salio de control",
-    "completed": false,
-    "description": "",
-    "creationDate": "2025-03-14T12:16:05.443Z",
-    "updateDate": "2025-03-14T13:40:38.994Z"
-  },
-  {
-    "text": "Otra otra otra",
-    "completed": false,
-    "description": "",
-    "creationDate": "2025-03-14T12:16:05.443Z",
-    "updateDate": "2025-03-14T13:40:38.480Z"
-  },
-  {
-    "text": "Una nueva nueva nuevisima tare",
-    "completed": false,
-    "description": "",
-    "creationDate": "2025-03-14T12:16:05.443Z",
-    "updateDate": "2025-03-14T13:40:38.014Z"
-  },
-  {
-    "text": "Otraaaaaaaaaaaaaaaaaaaaaaaa",
-    "completed": false,
-    "description": "",
-    "creationDate": "2025-03-14T12:16:05.443Z",
-    "updateDate": "2025-03-14T13:40:37.544Z"
-  },
-  {
-    "text": "Oncfbvhjrfdcd",
-    "completed": false,
-    "description": "",
-    "creationDate": "2025-03-14T13:59:34.358Z"
   }
 ]
