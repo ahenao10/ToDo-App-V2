@@ -6,7 +6,7 @@ let click = 0;
 
 const express = require('express');
 const cors = require('cors');
-const allowedOrigins = ['http://localhost:3000', 'https://to-do-app-v2-pearl.vercel.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://todoappalejo.vercel.app'];
 
 const app = express();
 const PORT = process.env.PORT || 5000;
